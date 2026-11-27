@@ -3415,7 +3415,7 @@
       "movement": "issue",
       "day": 63,
       "posted": 63,
-      "units": 12,
+      "units": 26,
       "unit": "piece",
       "pack": 24,
       "revision": 1
@@ -3427,7 +3427,7 @@
       "movement": "issue",
       "day": 64,
       "posted": 64,
-      "units": 22,
+      "units": 34,
       "unit": "piece",
       "pack": 24,
       "revision": 1
@@ -3439,7 +3439,7 @@
       "movement": "issue",
       "day": 65,
       "posted": 65,
-      "units": 17,
+      "units": 33,
       "unit": "piece",
       "pack": 24,
       "revision": 1
@@ -3451,7 +3451,7 @@
       "movement": "issue",
       "day": 66,
       "posted": 66,
-      "units": 12,
+      "units": 22,
       "unit": "piece",
       "pack": 24,
       "revision": 1
@@ -6536,54 +6536,6 @@
       "day": 62,
       "posted": 62,
       "units": 16,
-      "unit": "piece",
-      "pack": 16,
-      "revision": 1
-    },
-    {
-      "sku": "GAUZE-07",
-      "store": "社区巡诊",
-      "ticket": "RC-07-063",
-      "movement": "issue",
-      "day": 63,
-      "posted": 63,
-      "units": 21,
-      "unit": "piece",
-      "pack": 16,
-      "revision": 1
-    },
-    {
-      "sku": "GAUZE-07",
-      "store": "社区巡诊",
-      "ticket": "RC-07-064",
-      "movement": "issue",
-      "day": 64,
-      "posted": 64,
-      "units": 19,
-      "unit": "piece",
-      "pack": 16,
-      "revision": 1
-    },
-    {
-      "sku": "GAUZE-07",
-      "store": "社区巡诊",
-      "ticket": "RC-07-065",
-      "movement": "issue",
-      "day": 65,
-      "posted": 65,
-      "units": 24,
-      "unit": "piece",
-      "pack": 16,
-      "revision": 1
-    },
-    {
-      "sku": "GAUZE-07",
-      "store": "社区巡诊",
-      "ticket": "RC-07-066",
-      "movement": "issue",
-      "day": 66,
-      "posted": 66,
-      "units": 18,
       "unit": "piece",
       "pack": 16,
       "revision": 1
@@ -12515,6 +12467,18 @@
       "unit": "piece",
       "pack": 12,
       "revision": 1
+    },
+    {
+      "sku": "WIPE-04",
+      "store": "社区巡诊",
+      "ticket": "RC-04-L66",
+      "movement": "issue",
+      "day": 66,
+      "posted": 84,
+      "units": 18,
+      "unit": "piece",
+      "pack": 24,
+      "revision": 1
     }
   ],
   "daily": [
@@ -17618,8 +17582,8 @@
       "day": 63,
       "observed": 64,
       "open_minutes": 480,
-      "unavailable_minutes": 0,
-      "closing_units": 49
+      "unavailable_minutes": 480,
+      "closing_units": 0
     },
     {
       "sku": "GAUZE-07",
@@ -17627,8 +17591,8 @@
       "day": 64,
       "observed": 65,
       "open_minutes": 480,
-      "unavailable_minutes": 0,
-      "closing_units": 51
+      "unavailable_minutes": 480,
+      "closing_units": 0
     },
     {
       "sku": "GAUZE-07",
@@ -17636,8 +17600,8 @@
       "day": 65,
       "observed": 66,
       "open_minutes": 480,
-      "unavailable_minutes": 0,
-      "closing_units": 46
+      "unavailable_minutes": 480,
+      "closing_units": 0
     },
     {
       "sku": "GAUZE-07",
@@ -17645,8 +17609,8 @@
       "day": 66,
       "observed": 67,
       "open_minutes": 480,
-      "unavailable_minutes": 0,
-      "closing_units": 52
+      "unavailable_minutes": 480,
+      "closing_units": 0
     },
     {
       "sku": "GAUZE-07",
@@ -22453,6 +22417,13 @@
       "open_minutes": 480,
       "unavailable_minutes": 0,
       "closing_units": 28
+    }
+  ],
+  "substitutions": [
+    {
+      "store": "社区巡诊",
+      "original_sku": "GAUZE-07",
+      "substitute_sku": "WIPE-04"
     }
   ]
 }

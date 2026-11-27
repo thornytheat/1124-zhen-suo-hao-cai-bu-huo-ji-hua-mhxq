@@ -83,7 +83,7 @@ def test_unknown_forecast_and_nonmoving_stock_dont_create_buying_opportunity():
 def test_normal_feature_pipeline_reconciles_purchase_budget_with_exact_scenario(capacity):
     values=run(capacity)
     scenarios=values['reconciliation']['purchase_comparison']
-    published=values['stages'][4]['records']
+    published=values['stages'][5]['records']
     assert scenarios['verified_cost']
     assert scenarios['baseline_spend_cents']==sum(row['spent'] for row in published)
     assert scenarios['baseline_spend_cents']==round(100*values['metrics']['建议金额'])

@@ -12,7 +12,7 @@ from werkzeug.exceptions import BadRequest, RequestEntityTooLarge, UnsupportedMe
 
 from .pipeline import run
 
-MODULES = (('usage_receipts', '领用流水'), ('outage_today', '可售修复'), ('demand_smoothing', '用量建模'), ('reorder_bands', '残差区间'), ('carton_budget', '整箱分配'), ('consumption_review', '消耗复盘'))
+MODULES = (('usage_receipts', '领用流水'), ('outage_today', '可售修复'), ('substitution_attribution', '替代归因'), ('demand_smoothing', '用量建模'), ('reorder_bands', '残差区间'), ('carton_budget', '整箱分配'), ('consumption_review', '消耗复盘'))
 application = Flask(__name__, static_folder="web/static", template_folder="web/templates")
 application.config["MAX_CONTENT_LENGTH"] = 8192
 application.json.sort_keys = False

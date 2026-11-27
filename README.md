@@ -8,12 +8,13 @@
 docker compose up --build -d
 ```
 
-打开 `http://127.0.0.1:18203/` 查看耗材补货单。左侧六个入口可展开运行证据。调整「补货箱额（箱）」，点击「重算补货」比较处置结果。结束后执行 `docker compose down --remove-orphans`。
+打开 `http://127.0.0.1:18203/` 查看耗材补货单。左侧七个入口可展开运行证据。调整「补货箱额（箱）」，点击「重算补货」比较处置结果。结束后执行 `docker compose down --remove-orphans`。
 
 ## 独立业务模块
 
 - 领用流水 `usage_receipts`
 - 可售修复 `outage_today`
+- 替代归因 `substitution_attribution`
 - 用量建模 `demand_smoothing`
 - 残差区间 `reorder_bands`
 - 整箱分配 `carton_budget`

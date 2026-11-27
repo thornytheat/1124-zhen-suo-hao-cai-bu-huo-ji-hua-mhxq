@@ -8,6 +8,7 @@
 |---|---|---|---|---|
 | M1 | 领用流水 | UsageTicket处理证据 | `src/clinicstock/usage_receipts/contracts.py` `src/clinicstock/usage_receipts/algorithm.py` `src/clinicstock/usage_receipts/service.py` `src/clinicstock/usage_receipts/movement_ledger.py` | `tests/test_usage_receipts.py` `tests/test_movement_ledger.py` |
 | M2 | 可售修复 | DailyShelf处理证据 | `src/clinicstock/outage_today/contracts.py` `src/clinicstock/outage_today/algorithm.py` `src/clinicstock/outage_today/service.py` `src/clinicstock/outage_today/stockout_review.py` | `tests/test_outage_today.py` `tests/test_stockout_review.py` |
+| M7 | 替代归因 | SubstitutionLink处理证据 | `src/clinicstock/substitution_attribution/contracts.py` `src/clinicstock/substitution_attribution/algorithm.py` `src/clinicstock/substitution_attribution/service.py` | `tests/test_substitution_attribution.py` |
 | M3 | 用量建模 | DemandDay处理证据 | `src/clinicstock/demand_smoothing/contracts.py` `src/clinicstock/demand_smoothing/algorithm.py` `src/clinicstock/demand_smoothing/service.py` | `tests/test_demand_smoothing.py` |
 | M4 | 残差区间 | ValidationDemand处理证据 | `src/clinicstock/reorder_bands/contracts.py` `src/clinicstock/reorder_bands/algorithm.py` `src/clinicstock/reorder_bands/service.py` | `tests/test_reorder_bands.py` |
 | M5 | 整箱分配 | PurchaseRequest处理证据 | `src/clinicstock/carton_budget/contracts.py` `src/clinicstock/carton_budget/algorithm.py` `src/clinicstock/carton_budget/service.py` `src/clinicstock/carton_budget/purchase_portfolio.py` | `tests/test_carton_budget.py` `tests/test_purchase_portfolio.py` |
@@ -22,6 +23,9 @@
 | TRAP-26 | 晚到旧记账修订不会覆盖新流水 | `src/clinicstock/usage_receipts/algorithm.py` | `tests/test_usage_receipts.py::test_revision_supersedes_original_amount_without_order_dependence` |
 | TRAP-33 | 验证窗口非整除尾段和中间断供不计入完整训练窗口 | `src/clinicstock/reorder_bands/algorithm.py` | `tests/test_reorder_bands.py::test_nonoverlap_validation_blocks_drop_incomplete_intervals` |
 | TRAP-42 | 未来正常用量不能修复早期被截尾需求 | `src/clinicstock/outage_today/algorithm.py` | `tests/test_outage_today.py::test_later_day_never_corrects_earlier_censored_demand` |
+| TRAP-61 | 原品有货日替用品多领仍算自身用量，只有全日断供才按超基线部分归因 | `src/clinicstock/substitution_attribution/algorithm.py` | `tests/test_substitution_attribution.py::test_original_available_day_never_attributes_substitution` |
+| TRAP-62 | 替代回补与可售修复互斥，归回原品的量不能再算进断供回补 | `src/clinicstock/pipeline.py` | `tests/test_scenario_reconciliation.py::test_recovered_substitution_feeds_forecast_without_double_counting_stockout_repair` |
+| TRAP-63 | 晚到领用改变替代量后，两边预测指纹、区间签名与订货短缺件数全部重算 | `src/clinicstock/pipeline.py` | `tests/test_scenario_reconciliation.py::test_late_usage_record_recomputes_attribution_forecast_bands_and_cases` |
 | TRAP-43 | 没有已核完整窗口时覆盖率留空 | `src/clinicstock/reorder_bands/algorithm.py` | `tests/test_reorder_bands.py::test_group_without_enough_closed_windows_leaves_buffer_unknown` |
 | TRAP-53 | 另一个诊室的预测批次不会改变原诊室预测 | `src/clinicstock/demand_smoothing/algorithm.py` | `tests/test_demand_smoothing.py::test_different_store_does_not_change_forecast` |
 | TRAP-54 | 模型平滑系数变化时拟合标识改变 | `src/clinicstock/demand_smoothing/algorithm.py` | `tests/test_demand_smoothing.py::test_different_smoothing_parameter_invalidates_fingerprint` |
